@@ -21,6 +21,23 @@ public class MaxHeap
 
     public List<int> GetHeap => _heap.ToList();
     
+    public void AddElement(int num)
+    {
+        _heap.Add(num);
+        HeapUp();
+    }
+
+    public int ExtractMax()
+    {
+        int max = _heap[0];
+        
+        (_heap[0], _heap[^1]) = (_heap[^1], _heap[0]);
+        _heap.RemoveAt(_heap.Count - 1);
+        
+        HeapDown();
+        
+        return max;
+    }
     private void HeapUp()
     {
         var index = _heap.Count - 1;
@@ -35,6 +52,39 @@ public class MaxHeap
         }
     }
 
+    private void HeapDown()
+    {
+        int index = 0;
+
+        while (true)
+        {
+            int swapIndex = index;
+            int left = GetLeftChild(index);
+            int right = GetRigthChild(index);
+
+            if (left < _heap.Count && _heap[left] >= _heap[swapIndex])
+            {
+                (_heap[left], _heap[swapIndex]) = (_heap[swapIndex], _heap[left]);
+                swapIndex = left;
+            }
+
+            if (right < _heap.Count && _heap[right] >= _heap[swapIndex])
+            {
+                (_heap[right], _heap[swapIndex]) = (_heap[swapIndex], _heap[right]);
+                swapIndex = right;
+            }
+
+            if (swapIndex != index)
+            {
+                index = swapIndex;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    
     public static int GetLeftChild(int parentIndex)
     {
         return 2*parentIndex + 1;

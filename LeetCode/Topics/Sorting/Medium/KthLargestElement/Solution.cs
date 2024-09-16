@@ -1,53 +1,40 @@
 ﻿namespace LeetCode.Topics.Sorting.Medium.KthLargestElement;
 
-public class Solution
-{
-    public int FindKthLargest(int[] nums, int k)
-    {
-        int start = 0;
-        int end = nums.Length - 1;
-        int smallCount = 0;
-        int pivot = 0;
-        while (start < end)
-        {
-            pivot = Partition(nums, start, end, ref smallCount);
-            if (smallCount == k) break;
-            if (smallCount < k) start = pivot;
-            if (smallCount > k) end = pivot;
-        }
-        
-        return nums[pivot];
+public class Solution {
+    public int FindKthLargest(int[] nums, int k) {
+        if(nums.Length == 0) return nums[0];
+        int q = nums.Length - k;
+        QuickSelect(nums, 0, nums.Length - 1, q);
+        return nums[q];
     }
 
-    int Partition(int [] segment, int start, int end, ref int smallCount)
+    private void QuickSelect(int[] nums, int start, int end, int k){
+        int pivot = Partition(nums, start, end);
+
+        if(pivot == k) return;
+        if(pivot < k) QuickSelect(nums, pivot + 1, end, k);
+        else QuickSelect(nums, start, pivot - 1, k);
+    }
+
+    private int Partition(int[] nums, int start, int end)
     {
-        int pivot = (start + end) / 2;
+        int pivot = new Random().Next(start, end);
+        int pivotElement = nums[pivot];
 
-        while (start < end)
-        {
-            if (segment[start] < segment[pivot])
-            {
-                ++start;
-                ++smallCount;
-            }else if(segment[start] > segment[pivot])
-            {
-                (segment[pivot], segment[start]) = (segment[start], segment[pivot]);
-                pivot = start;
-            }
-            else
-            {
-                pivot = start;
-                start++;
-            }
+        (nums[pivot], nums[end]) = (nums[end], nums[pivot]);
 
-            if (segment[pivot] < segment[end]) --end;
-            else
+        int pivotIndex = start;
+
+        for(int i = start; i < end; i++){
+            if(nums[i] < pivotElement) 
             {
-                (segment[pivot], segment[end]) = (segment[start], segment[end]);
-                pivot = end;
+                (nums[i], nums[pivotIndex]) = (nums[pivotIndex], nums[i]);
+                pivotIndex++;
             }
         }
+        
+        (nums[end], nums[pivotIndex]) = (nums[pivotIndex], nums[end]);
 
-        return pivot;
+        return pivotIndex;
     }
 }

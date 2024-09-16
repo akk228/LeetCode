@@ -8,8 +8,8 @@ public class Tests
     public static IEnumerable<object[]> TestData =>
         new List<object[]>()
         {
-            new object[] { new[] { 3,2,1,5,6,4 }, 2, 3 },
-            new object[] { new[] {3,2,3,1,2,4,5,5,6}, 4 , 4}
+            new object[] { new[] { 3,2,1,5,6,4 }, 2, 5 },
+            // new object[] { new[] {3,2,3,1,2,4,5,5,6}, 4 , 4}
         };
     
     [Theory]

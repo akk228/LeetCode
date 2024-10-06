@@ -10,7 +10,7 @@
 public class Solution
 {
     private readonly int[][] _shifts = [[0, 1], [0,-1], [1, 0], [-1, 0]];
-    private readonly char Null = '\0';
+    private const char Null = '\0';
     
     public bool Exist(char[][] board, string word) {
         for(var row = 0; row < board.Length; row++){

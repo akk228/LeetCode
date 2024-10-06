@@ -8,7 +8,7 @@ public class Tests
     [MemberData(nameof(TestData))]
     public void Sorted(int[] arr)
     {
-        _solution.quickSort(arr, 0, arr.Length - 1);
+        _solution.QuickSort(arr, 0, arr.Length - 1);
         CheckResult(arr);
     }
     

@@ -6,21 +6,20 @@ public class TestdPartition
     public static IEnumerable<object[]> Data =>
         new List<object[]>()
         {
-            new object[]{ new []{1,2,3}, 1},
-            new object[]{ new []{1,2,3}, 2},
-            new object[]{ new []{1,1,2,5}, 1},
-            new object[]{ new []{3,3,2,1}, 1},
-            new object[]{ new []{3,3,2,1}, 0}
+            new object[]{ new []{1,2,3}},
+            new object[]{ new []{1,2,3}},
+            new object[]{ new []{1,1,2,5}},
+            new object[]{ new []{3,3,2,1}},
+            new object[]{ new []{3,3,2,1}}
         };
 
     [Theory]
     [MemberData(nameof(Data))]
-    public void PartitionedCorrectly(int[] arr, int pivot)
+    public void PartitionedCorrectly(int[] arr)
     {
-        var pivotElement = arr[pivot];
-        var pivotIndex = _solution.Partition(arr, 0, arr.Length - 1, pivot);
+        var pivotIndex = _solution.Partition(arr, 0, arr.Length - 1);
         
-        Assert.Equal(pivotElement, arr[pivotIndex]);
+        CheckPartitioning(arr, pivotIndex);
         
     }
 

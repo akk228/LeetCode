@@ -16,7 +16,6 @@ public class Solution
         for(var row = 0; row < board.Length; row++){
             for(var col = 0; col < board[0].Length; col++)
             {
-                if (board[row][col] != word[0]) continue;
                 if(Traverse(board, row, col, word, 0)){
                     return true;
                 }

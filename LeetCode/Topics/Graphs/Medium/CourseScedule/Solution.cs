@@ -15,7 +15,6 @@ public class Solution {
                 courseGraph[coursePair[1]] = new List<int>();
             courseGraph[coursePair[1]].Add(coursePair[0]);
         }
-
         return !isCycle(numCourses, courseGraph);
     }
 

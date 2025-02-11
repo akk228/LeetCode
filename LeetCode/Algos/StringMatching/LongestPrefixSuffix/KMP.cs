@@ -34,7 +34,3 @@ public class KMP
         return lps;
     }
 }
-
-
-// b a a b a a b a a b a a
-// 

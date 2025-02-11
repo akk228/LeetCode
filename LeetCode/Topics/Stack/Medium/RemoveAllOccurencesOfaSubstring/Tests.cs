@@ -1,7 +1,4 @@
 // filepath: /C:/Users/andre/Documents/Studying/LeetCode/LeetCode/Topics/Stack/Medium/RemoveAllOccurencesOfaSubstring/Tests.cs
-using System;
-using System.Collections.Generic;
-using Xunit;
 
 namespace Stack.Medium.RemoveAllOccurencesOfSubString
 {

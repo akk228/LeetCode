@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
 
 namespace LeetCode.Topics.SortingAndSearching.Medium.MostBeautifulItemForEachQuery;
-
+using System;
 public class Solution
 {
     private const int Price = 0;

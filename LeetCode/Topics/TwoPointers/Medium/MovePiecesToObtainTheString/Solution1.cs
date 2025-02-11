@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Topics.TwoPointers.Medium.MovePiecesToObtainTheString;
 
-public class Solution : ISolution
+public class Solution1 : ISolution
 {
     private const char R = 'R';
     private const char L = 'L';

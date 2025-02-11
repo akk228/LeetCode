@@ -1,5 +1,5 @@
 ﻿namespace LeetCode.Topics.SortingAndSearching.Medium.MinimizedMaximumOfProductsToAnyStore;
-
+using System;
 public class PriorityQueueSolution
 {
     private struct ProductDistribution
@@ -22,6 +22,8 @@ public class PriorityQueueSolution
             var priority = (product.Quantity + product.StoreCount - 1) / product.StoreCount;
             distribution.Enqueue(product, priority);
         }
+        
+        Array.BinarySearch(new int[]{}, distribution);
         
         var highestPriorityProduct = distribution.Peek();
         return (highestPriorityProduct.Quantity + highestPriorityProduct.StoreCount - 1) / highestPriorityProduct.StoreCount;

@@ -1,5 +1,6 @@
 ﻿namespace LeetCode.Topics.SortingAndSearching.Medium.CountNumbersOfFairPairs;
 
+using System;
 public class Solution
 {
     public long CountFairPairs(int[] nums, int lower, int upper)

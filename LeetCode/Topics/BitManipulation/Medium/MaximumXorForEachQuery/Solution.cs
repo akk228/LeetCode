@@ -1,4 +1,5 @@
 ﻿namespace LeetCode.Topics.BitManipulation.MaximumXorForEachQuery;
+using System;
 /// <summary>
 /// 1829. Maximum XOR for each query
 /// Beat: 100% time, 75% memory

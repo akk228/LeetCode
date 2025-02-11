@@ -17,7 +17,7 @@ public class StringComparerTests
     [MemberData(nameof(GetStringComparerTestData))]
     public void ReturnsCorrectCostOfTransformationOfPatternToString(string text, string pattern, int cost)
     {
-        var actualCost = StringComparer.CompareCost(text, pattern, text.Length - 1, pattern.Length - 1);
+        var actualCost = new StringComparerDp().CompareCost(text, pattern, text.Length - 1, pattern.Length - 1);
         Assert.Equal(cost, actualCost);
     }
 }

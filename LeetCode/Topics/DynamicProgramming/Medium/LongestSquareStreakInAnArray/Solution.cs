@@ -1,5 +1,5 @@
 ﻿namespace LeetCode.Topics.DynamicProgramming.Medium.LongestSquareStreakInAnArray;
-
+using System;
 public class Solution {
     public int LongestSquareStreak(int[] nums)
     {

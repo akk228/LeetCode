@@ -1,6 +1,9 @@
 ﻿namespace LeetCode.Topics.TwoPointers.Medium.MovePiecesToObtainTheString;
 
-public class ISolution
+/// <summary>
+/// 2337. Move Pieces to Obtain a String
+/// </summary>
+public interface ISolution
 {
-    
+    bool CanChange(string start, string target);
 }

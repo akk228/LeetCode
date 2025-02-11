@@ -1,6 +1,6 @@
 ﻿namespace LeetCode.Topics.DynamicProgramming.Medium.ApproximateStringMatching;
 
-public static class StringComparer
+public class StringComparer : IStringComparer
 {
     private const int _insert = 0;
     private const int _delete = 1;
@@ -18,7 +18,7 @@ public static class StringComparer
     /// <returns>
     /// The cost of transforming part of the test that has length textLength to a pattern with length patternLength
     /// </returns>
-    public static int CompareCost(string text, string pattern, int textEnd, int patternEnd)
+    public int CompareCost(string text, string pattern, int textEnd, int patternEnd)
     {
         if (textEnd == -1) return (patternEnd + 1) * _operationCosts[_insert];
         if (patternEnd == -1) return (textEnd + 1) * _operationCosts[_delete];

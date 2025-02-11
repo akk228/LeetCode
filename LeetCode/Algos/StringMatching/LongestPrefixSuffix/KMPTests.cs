@@ -14,6 +14,7 @@ namespace LeetCode.Algos.StringMatching.LongestPrefixSuffix
             yield return new object[] { "AAABAAA", new int[] { 0, 1, 2, 0, 1, 2, 3 } };
             yield return new object[] { "ABABAC", new int[] { 0, 0, 1, 2, 3, 0 } };
             yield return new object[] { "baabaabaabaa", new int[] { 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 } };
+            yield return new object[] { "aaafbcaaafa", new int[] { 0, 1, 2, 0, 0, 0, 1, 2, 3, 4, 1 } };
         }
 
         [Theory]

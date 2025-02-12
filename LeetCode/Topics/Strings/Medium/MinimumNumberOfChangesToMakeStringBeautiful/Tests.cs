@@ -1,5 +1,8 @@
-﻿namespace LeetCode.Topics.Strings.Medium.MinimumNumberOfChangesToMakeStringBeautiful;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace LeetCode.Topics.Strings.Medium.MinimumNumberOfChangesToMakeStringBeautiful;
+
+[ExcludeFromCodeCoverage]
 public class Tests
 {
     public static IEnumerable<object[]> TestData() => new List<object[]>()

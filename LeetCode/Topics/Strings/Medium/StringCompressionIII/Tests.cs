@@ -1,7 +1,10 @@
-﻿namespace LeetCode.Topics.Strings.Medium.StringCompressionIII;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace LeetCode.Topics.Strings.Medium.StringCompressionIII;
 
 public class Tests
 {
+    [ExcludeFromCodeCoverage]
     public static IEnumerable<object[]> TestData => new List<object[]>
     {
         new object[]{"abc", "1a1b1c"}

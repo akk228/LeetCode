@@ -1,7 +1,10 @@
-﻿namespace LeetCode.Topics.TwoPointers.Medium.MovePiecesToObtainTheString;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace LeetCode.Topics.TwoPointers.Medium.MovePiecesToObtainTheString;
 
 public class Tests
 {
+    [ExcludeFromCodeCoverage]
     public static IEnumerable<object[]> TestData() => new List<object[]>()
     {
         new object[] { "_R", "R_", false },

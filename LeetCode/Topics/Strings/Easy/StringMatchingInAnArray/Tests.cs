@@ -1,5 +1,8 @@
-﻿namespace LeetCode.Topics.Strings.Easy.StringMatchingInAnArray;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace LeetCode.Topics.Strings.Easy.StringMatchingInAnArray;
+
+[ExcludeFromCodeCoverage]
 public class Tests
 {
     public static IEnumerable<object[]> TestData() => new List<object[]>()

@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
-using Xunit;
+using System.Diagnostics.CodeAnalysis;
 
 namespace LeetCode.Algos.StringMatching.LongestPrefixSuffix
 {
+    [ExcludeFromCodeCoverage]
     public class KMPTests
     {
         public static IEnumerable<object[]> TestData()

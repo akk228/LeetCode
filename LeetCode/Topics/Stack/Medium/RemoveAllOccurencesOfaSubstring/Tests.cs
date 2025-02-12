@@ -1,7 +1,10 @@
 // filepath: /C:/Users/andre/Documents/Studying/LeetCode/LeetCode/Topics/Stack/Medium/RemoveAllOccurencesOfaSubstring/Tests.cs
 
+using System.Diagnostics.CodeAnalysis;
+
 namespace Stack.Medium.RemoveAllOccurencesOfSubString
 {
+    [ExcludeFromCodeCoverage]
     public class Tests
     {
         public static IEnumerable<object[]> TestData()

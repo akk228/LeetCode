@@ -1,5 +1,8 @@
-﻿namespace LeetCode.Topics.TwoPointers.Medium.ShortestSubArrayToBeRemovedToMakeArraySorted;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace LeetCode.Topics.TwoPointers.Medium.ShortestSubArrayToBeRemovedToMakeArraySorted;
+
+[ExcludeFromCodeCoverage]
 public class Tests
 {
     public static IEnumerable<object[]> TestData() => new List<object[]>

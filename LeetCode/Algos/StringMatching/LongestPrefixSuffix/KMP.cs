@@ -6,31 +6,43 @@ public class KMP
     public static int[] LPS(in string pattern)
     {
         var lps = new int[pattern.Length];
-        lps[0] = 0;
-        var len = 0;
-        var i = 1;
+        var prefixLength = 0;
+        var pos = 1;
 
-        while (i < pattern.Length)
+        lps[0] = 0;
+        // curr pos: proper prefix length is built so far
+        // a1 a2 a3 a4        a5 a6 a7 a8 a9 a10
+        //          (*pl + 1)       a1 a2 a3 *pos
+        //                             a1 a2 a3 
+        //___________________________________
+        // a4 != a10
+        //___________________________________
+        // lps[*pl] > 0, say it will be 2, and if a3 == a10
+        //___________________________________
+        //  if a8 == a2 then we move pattern
+        //  a1 a2 a3 a4 a5  |a1 a1 a2 a9 a10
+
+        // prefixLength <= pos
+        // lps[pos - 1] is correct for every iteration
+        while (pos < pattern.Length)
         {
-            if (pattern[i] == pattern[len])
+            if (pattern[pos] == pattern[prefixLength])
             {
-                len++;
-                lps[i] = len;
-                i++;
+                lps[pos++] = ++prefixLength;
             }
             else
             {
-                if (len != 0)
+                if (prefixLength == 0)
                 {
-                    len = lps[len - 1];
+                    lps[pos++] = 0;
                 }
                 else
                 {
-                    lps[i] = 0;
-                    i++;
+                    prefixLength = lps[prefixLength - 1];
                 }
             }
         }
+        
         return lps;
     }
 }

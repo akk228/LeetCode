@@ -2,39 +2,38 @@ namespace Studying.LeetCode.Topics.Graphs.Hard.LongestCycleInGraph;
 
 public class Solution : ISolution
 {
-    public int LongestCycle(int[] edges) {
-        var visited = new bool[edges.Length];
-        var edgeCounts = new int[edges.Length];
+    public int LongestCycle(int[] edges)
+    {
+        var visited = new int[edges.Length];
         var longestCycle = -1;
 
         for (var v = 0; v < edges.Length; v++)
         {
-            if (!visited[v])
+            if (visited[v] == 0)
             {
-                longestCycle = Math.Max(longestCycle, DFS(v, edges, visited, edgeCounts));
+                longestCycle = Math.Max(longestCycle, DFS(v, edges, visited, 1));
             }
         }
 
         return longestCycle;
     }
 
-    private int DFS(int v, int[] edges, bool[] visited, int[] edgeCounts, int count = 1)
+    private int DFS(int v, int[] edges, int[] visited, int count)
     {
-        if (visited[v] && edgeCounts[v] == 0)
+        if (visited[v] == -1)
         {
             return -1;
         }
 
-        if (edgeCounts[v] > 0)
+        if (visited[v] > 0)
         {
-            return count - edgeCounts[v];
+            return count - visited[v];
         }
 
-        visited[v] = true;
-        edgeCounts[v] = count;
+        visited[v] = count;
 
-        var longestCycle = edges[v] != -1 ? DFS(edges[v], edges, visited, edgeCounts, count + 1) : -1;
-        edgeCounts[v] = 0;
+        var longestCycle = edges[v] != -1 ? DFS(edges[v], edges, visited, count + 1) : -1;
+        visited[v] = -1;
 
         return longestCycle;
     }

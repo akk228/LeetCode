@@ -39,7 +39,7 @@ public class OptimalSolution : ISolution
                 return true;
             }
         }
-
+        
         return false;
     }
 }

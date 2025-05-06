@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Topics.BinaryTrees;
+﻿#nullable disable
+
+namespace LeetCode.Topics.BinaryTrees;
 
 public class TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
 {

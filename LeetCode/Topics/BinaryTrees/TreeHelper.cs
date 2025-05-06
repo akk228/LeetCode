@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Topics.BinaryTrees;
+﻿#nullable disable
+
+namespace LeetCode.Topics.BinaryTrees;
 
 public static class TreeHelper
 {
@@ -97,7 +99,7 @@ public class TreeBuilderTests
         {
             var tree = TreeHelper.BuildTreeFromArray(nums);
         }
-        catch (Exception e)
+        catch (Exception)
         {
             Assert.Fail();
         }

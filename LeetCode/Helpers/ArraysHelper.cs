@@ -14,7 +14,7 @@ public static class ArraysHelper
                     y is null && x is not null)
                     return false;
                 
-                return x.CompareTo(y) == 0;
+                return x?.CompareTo(y) == 0;
             }));
 
         return !result.Any() && list1.Count() == list2.Count();

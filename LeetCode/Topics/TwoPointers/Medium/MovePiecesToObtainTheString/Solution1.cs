@@ -4,7 +4,7 @@ public class Solution1 : ISolution
 {
     private const char R = 'R';
     private const char L = 'L';
-    private const char _ = '_';
+    private const char underScore = '_';
 
     public bool CanChange(string start, string target)
     {
@@ -15,7 +15,7 @@ public class Solution1 : ISolution
 
         while (patternIndex < start.Length && targetIndex < target.Length)
         {
-            if(matchingTarget[targetIndex] == _) {
+            if(matchingTarget[targetIndex] == underScore) {
                 targetIndex++;
                 continue;
             }
@@ -24,7 +24,7 @@ public class Solution1 : ISolution
             {
                 switch (pattern[patternIndex])
                 {
-                    case _:
+                    case underScore:
                         patternIndex++;
                         continue;
                     case R:
@@ -42,7 +42,7 @@ public class Solution1 : ISolution
             {
                 switch (pattern[patternIndex])
                 {
-                    case _:
+                    case underScore:
                         patternIndex++;
                         continue;
                     case L:

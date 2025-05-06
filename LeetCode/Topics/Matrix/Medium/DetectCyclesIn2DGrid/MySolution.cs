@@ -37,7 +37,7 @@ public class MySolution : ISolution
         (int X, int Y) next = (start.X - 1, start.Y);
         // go up
         if (next.X >= 0 && // dont overflow
-            grid[start.X][start.Y] == grid[next.X][next.Y] && // can go up
+            grid[start.X][start.Y] == grid[next.X][next.Y] && // can move
             next != parent && // not the parent
             TryGetCycle(next, start, grid, visited))
         {
@@ -47,7 +47,7 @@ public class MySolution : ISolution
         next = (start.X + 1, start.Y);
         // go down
         if (next.X < grid.Length && // dont overflow
-            grid[start.X][start.Y] == grid[next.X][next.Y] && // can go up
+            grid[start.X][start.Y] == grid[next.X][next.Y] && // can move
             next != parent && // not the parent
             TryGetCycle(next, start, grid, visited))
         {
@@ -57,7 +57,7 @@ public class MySolution : ISolution
         next = (start.X, start.Y - 1);
         // go left
         if (next.Y >= 0 && // dont overflow
-            grid[start.X][start.Y] == grid[next.X][next.Y] && // can go up
+            grid[start.X][start.Y] == grid[next.X][next.Y] && // can move
             next != parent && // not the parent
             TryGetCycle(next, start, grid, visited))
         {
@@ -67,7 +67,7 @@ public class MySolution : ISolution
         next = (start.X, start.Y + 1);
         // go left
         if (next.Y < grid[0].Length && // dont overflow
-            grid[start.X][start.Y] == grid[next.X][next.Y] && // can go up
+            grid[start.X][start.Y] == grid[next.X][next.Y] && // can move
             next != parent && // not the parent
             TryGetCycle(next, start, grid, visited))
         {

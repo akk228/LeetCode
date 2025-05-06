@@ -11,6 +11,15 @@ public class HeapTests
         new object[] { new int[]{ 3, 2, 1, 4, 5 ,0, 8 }, 0},
     };
     
+    public static IEnumerable<object[]> TestDataSort() => new List<object[]>()
+    {
+        new object[] { new int[]{ 1, 2, 3, 4 }},
+        new object[] { new int[]{ 3, 2, 1, 4 }},
+        new object[] { new int[]{ 3, 4, 1, 2 }},
+        new object[] { new int[]{ 3, 2, 1, 1 }},
+        new object[] { new int[]{ 3, 2, 1, 4, 5 ,0, 8 }},
+    };
+
     [Theory]
     [MemberData(nameof(TestData))]
     public void BuildsHeapsAndExtractsCorrectRoot(int[] input, int min)
@@ -21,8 +30,8 @@ public class HeapTests
     }
     
     [Theory]
-    [MemberData(nameof(TestData))]
-    public void SortsCorrectlyViaHeap(int[] input, int min)
+    [MemberData(nameof(TestDataSort))]
+    public void SortsCorrectlyViaHeap(int[] input)
     {
         var minHeap = new Solution.Heap(input);
         var previousElement = minHeap.Extract().Value;

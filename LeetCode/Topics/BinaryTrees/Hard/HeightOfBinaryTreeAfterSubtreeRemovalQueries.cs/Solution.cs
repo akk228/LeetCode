@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Topics.BinaryTrees.Hard;
+﻿#nullable disable
+
+namespace LeetCode.Topics.BinaryTrees.Hard;
 
 /// <summary>
 /// 2458. Height of Binary Tree After Subtree Removal Queries

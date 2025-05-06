@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿#nullable disable
+
+using System.Diagnostics;
 
 namespace LeetCode.Topics.Strings.Easy.StringMatchingInAnArray;
 
@@ -64,12 +66,14 @@ public class Solution
 
             foreach (var ch in word)
             {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 if (!current.Children.TryGetValue(ch, out TrieNode child))
                 {
                     child = new TrieNode(ch);
                     current.Children.Add(ch, child);
                 }
-                
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+
                 current = child;
                 current.Frequency++;
             }

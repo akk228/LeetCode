@@ -1,5 +1,6 @@
 namespace LeetCode.Topics.BinaryTrees.Medium.ConstructBinaryTreeFromPreorderAndPostorderTraversals;
 
+#nullable disable
 public class Solution : ISolution
 {
     public TreeNode ConstructFromPrePost(int[] preorder, int[] postorder)
@@ -24,12 +25,13 @@ public class Solution : ISolution
         return root;
     }
 }
+#nullable disable
 
 public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
-    public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+    public TreeNode(int val=0, TreeNode left = null, TreeNode right = null) {
         this.val = val;
         this.left = left;
         this.right = right;

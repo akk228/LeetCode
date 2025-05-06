@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+﻿#nullable disable
 
 namespace LeetCode.Topics.Heap.Easy.FinalArrayStateAfterKMultiplicationOperationsI;
 
@@ -103,7 +103,7 @@ public class Solution
     {
         public int Value { get; set; } = value;
         public int Index { get; set; } = index;
-        public int CompareTo(HeapElement? other)
+        public int CompareTo(HeapElement other)
         {
             if (other == null) throw new NullReferenceException();
             var valueComparison = Value.CompareTo(other.Value);

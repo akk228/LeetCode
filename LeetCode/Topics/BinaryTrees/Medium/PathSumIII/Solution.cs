@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Topics.BinaryTrees.Medium.PathSumIII;
+﻿#nullable disable
+
+namespace LeetCode.Topics.BinaryTrees.Medium.PathSumIII;
 
 
 //  Definition for a binary tree node.

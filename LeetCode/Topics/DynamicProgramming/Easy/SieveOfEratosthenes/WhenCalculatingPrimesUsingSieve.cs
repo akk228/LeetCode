@@ -10,7 +10,6 @@ public class WhenCalculatingPrimesUsingSieve
         Assert.Equal(19, primeSmallerThan20);
 
         var calculatedPrimes = sieve.GetCalculatedPrimes();
-        Assert.True(
-            calculatedPrimes.SequenceEqual(new []{0, 1, 2,3 ,5, 7, 11, 13, 17, 19, 23}));
+        Assert.True(calculatedPrimes.SequenceEqual(new []{0, 1, 2,3 ,5, 7, 11, 13, 17, 19, 23}));
     }
 }

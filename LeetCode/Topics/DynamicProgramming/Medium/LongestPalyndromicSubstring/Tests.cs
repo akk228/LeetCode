@@ -4,6 +4,7 @@ public class Tests
 {
     public static IEnumerable<object[]> TestData => new List<object[]>()
     {
+        new object[]{ "a", 1},
         new object[]{ "aa", 2},
         new object[]{ "aaa", 3},
         new object[]{ "abac", 3},
@@ -16,7 +17,7 @@ public class Tests
     [MemberData(nameof(TestData))]
     public void ReturnsCorrectLength(string s, int maxLength)
     {
-        var actual = new Solution().LongestPalindrome(s);
+        var actual = new DummySolution().LongestPalindrome(s);
         Assert.Equal(maxLength, actual.Length);
     }
 }
